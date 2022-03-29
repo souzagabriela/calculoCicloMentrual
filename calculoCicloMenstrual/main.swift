@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  BloodyEmotional
+//  calculoCicloMenstrual
 //
 //  Created by Gabriela Souza Batista on 15/03/22.
 //
@@ -15,7 +15,6 @@ Olá, seja muito bem-vinda(o) ao seu calendário menstrual! Aqui iremos te falar
 Primeiro você terá que responder algumas perguntinhas, pode ser?
 Digite:
 [1] Sim, desejo continuar!
-[2] Não, encerrar!
 """
     print(firstInput)
 }
@@ -23,25 +22,19 @@ firstContact()
 
 // fazer while para quando a opçao for não, o codigo voltar para o começo.
 // while
+
 if let escolha = readLine()
 {
     if let resposta = Int(escolha) {
         if (resposta == 1) {
             print("Ótimo, vamos dar continuidade à próxima pergunta (e última), não vai demorar muito.")
         }
-        if (resposta == 2){
-            print("Você decidiu não prosseguir para as próximas perguntas. Mas tudo bem, se decidir mudar de ideia estaremos aqui.")
-        }
-        if (resposta != 1 && resposta != 2){
-            print("Por favor, digite um número válido")
-        }
     }
     else{
         print("Por favor, digite um valor válido")
+
     }
 }
-
-
 print("**************************************************************************************************")
 
 
@@ -93,3 +86,14 @@ print("Seu ciclo menstrual irá começar no dia: \(formatter.string(from: custom
 print("Seu próximo período fértil terá maior probabilidade entre os dias: \(formatter.string(from: customDatePeriodo1)), \(formatter.string(from: customDatePeriodo2)) e \(formatter.string(from: customDatePeriodo3))")
 
 //print(formatter.string(from: customDate)) -> forma de mostrar no console de um jeito melhor para o usuário
+
+let perMenstrual = "O primeiro dia da sua menstruação é a fase em que se sente mais disposição e energia. Nesse período é aconselhável a prática de exercícios físicos e organizações gerais do cotidiano."
+let perFertil = "Nessa fase acontece um equilibro nos hormônios (estrogênio e progesterona), trazendo um período de calma, introspecção, melhora do sono. A fase lútea tem impacto com a alimentação, sendo aconselhável evitar açúcar, cafeína e comidas ultra processadas."
+func ultimoContato() {
+    
+    let tchaUsuario = """
+No dia do seu ciclo menstrual, você provavelmente irá se sentir assim: \(perMenstrual). E no seu período fértil, você provavelmente irá se sentir assim: \(perFertil). Mas não se atenha apenas ao padrão, conheça suas emoções durante seus ciclos e aprenda com eles a melhorar seus dias bons e lidar melhor com seus dias ruins!
+"""
+    print(tchaUsuario)
+}
+ultimoContato()
